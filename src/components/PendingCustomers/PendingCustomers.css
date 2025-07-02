@@ -1,0 +1,311 @@
+/* src/components/PendingCustomers/PendingCustomers.css */
+
+.pending-customers-page {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #1a202c;
+}
+
+.page-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 1.125rem;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: #718096;
+}
+
+/* Unauthorized State */
+.unauthorized {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.unauthorized h2 {
+  margin: 0 0 1rem;
+  color: #e53e3e;
+}
+
+.unauthorized p {
+  margin: 0;
+  color: #718096;
+  font-size: 1.125rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e0;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem;
+  color: #4a5568;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #718096;
+}
+
+/* Applications Grid */
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Application Card */
+.application-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.application-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.application-header {
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.application-header h3 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.25rem;
+}
+
+.application-date {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.application-details {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.detail-row.full-width {
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.detail-row .label {
+  font-weight: 600;
+  color: #4a5568;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.detail-row span {
+  color: #2d3748;
+}
+
+.detail-row a {
+  color: #4299e1;
+  text-decoration: none;
+}
+
+.detail-row a:hover {
+  text-decoration: underline;
+}
+
+.detail-row p {
+  margin: 0.5rem 0 0;
+  color: #2d3748;
+  line-height: 1.5;
+}
+
+.application-actions {
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 1rem;
+}
+
+.approve-btn,
+.reject-btn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.975rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.approve-btn {
+  background: #48bb78;
+  color: white;
+}
+
+.approve-btn:hover:not(:disabled) {
+  background: #38a169;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+.reject-btn {
+  background: #e53e3e;
+  color: white;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background: #c53030;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.3);
+}
+
+.approve-btn:disabled,
+.reject-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .pending-customers-page {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .applications-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .application-card {
+    border-radius: 8px;
+  }
+
+  .application-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .application-details {
+    padding: 1rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .detail-row .label {
+    margin-bottom: 0.25rem;
+    min-width: auto;
+  }
+
+  .application-actions {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    width: 100%;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .pending-customers-page {
+    color: #e2e8f0;
+  }
+
+  .page-header h1 {
+    color: #f7fafc;
+  }
+
+  .application-card {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .application-header {
+    background: #1a202c;
+    border-bottom-color: #4a5568;
+  }
+
+  .application-header h3 {
+    color: #f7fafc;
+  }
+
+  .application-date {
+    color: #a0aec0;
+  }
+
+  .detail-row .label {
+    color: #a0aec0;
+  }
+
+  .detail-row span,
+  .detail-row p {
+    color: #e2e8f0;
+  }
+
+  .application-actions {
+    background: #1a202c;
+    border-top-color: #4a5568;
+  }
+
+  .empty-state {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .empty-state h3 {
+    color: #f7fafc;
+  }
+
+  .empty-state p {
+    color: #a0aec0;
+  }
+}

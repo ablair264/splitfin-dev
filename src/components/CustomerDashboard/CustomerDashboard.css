@@ -1,0 +1,346 @@
+/* src/components/CustomerDashboard/CustomerDashboard.css */
+
+.dmb-customer-dashboard * {
+  box-sizing: border-box;
+}
+
+.dmb-customer-dashboard h1,
+.dmb-customer-dashboard h2,
+.dmb-customer-dashboard h3,
+.dmb-customer-dashboard h4,
+.dmb-customer-dashboard h5,
+.dmb-customer-dashboard h6 {
+  margin-top: 0; /* Prevent margin collapsing */
+}
+
+.dmb-customer-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dmb-dashboard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: #9C9098;
+}
+
+/* Stats Cards */
+.dmb-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.dmb-stat-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dmb-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dmb-stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: #8c8088;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.dmb-stat-icon.dmb-pending {
+  background: #f59e0b;
+}
+
+.dmb-stat-icon.dmb-warning {
+  background: #ef4444;
+}
+
+.dmb-stat-content h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #2C2C2C;
+}
+
+.dmb-stat-content p {
+  font-size: 0.875rem;
+  color: #9C9098;
+  margin: 0.25rem 0 0;
+}
+
+.dmb-stat-link {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.875rem;
+  color: #8c8088;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dmb-stat-link:hover {
+  text-decoration: underline;
+}
+
+/* Quick Actions */
+.dmb-quick-actions {
+  margin-bottom: 3rem;
+}
+
+.dmb-quick-actions h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 1.5rem;
+}
+
+.dmb-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.dmb-action-card {
+  background: #8c8088;
+  color: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dmb-action-card:hover {
+  background: #7A7077;
+  transform: translateY(-2px);
+}
+
+.dmb-action-card svg {
+  font-size: 2rem;
+}
+
+.dmb-action-card span {
+  font-weight: 500;
+}
+
+/* Brands Showcase */
+.dmb-brands-showcase {
+  margin-bottom: 3rem;
+}
+
+.dmb-brands-showcase h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+}
+
+.dmb-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.dmb-brand-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #2C2C2C;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+.dmb-brand-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dmb-brand-logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EDEDED;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.dmb-brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.dmb-brand-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.dmb-brand-card p {
+  font-size: 0.875rem;
+  color: #9C9098;
+  margin: 0 0 1rem;
+}
+
+.dmb-brand-cta {
+  color: #8c8088;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Recent Activity */
+.dmb-recent-activity {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dmb-recent-activity h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 1.5rem;
+}
+
+.dmb-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dmb-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #EDEDED;
+  border-radius: 8px;
+}
+
+.dmb-activity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #EDEDED;
+  color: #9C9098;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dmb-activity-content {
+  flex: 1;
+}
+
+.dmb-activity-content p {
+  font-weight: 500;
+  margin: 0;
+  color: #2C2C2C;
+}
+
+.dmb-activity-content span {
+  font-size: 0.875rem;
+  color: #9C9098;
+}
+
+.dmb-activity-status .dmb-status {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.dmb-status.dmb-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.dmb-status.dmb-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.dmb-status.dmb-processing {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dmb-dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .dmb-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dmb-brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dmb-stat-icon.dmb-messages {
+  background: #6366f1;
+}
+
+.dmb-stat-card.dmb-clickable {
+  cursor: pointer;
+}
+
+.dmb-stat-card.dmb-clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Make action card clickable */
+.dmb-action-card {
+  cursor: pointer;
+}
+
+/* Override messaging colors for customer theme */
+.customer-dashboard .msg-popup .msg-new,
+.customer-dashboard .msg-popup .msg-send,
+.customer-dashboard .msg-popup .msg-conv-item.unread {
+  background-color: #8c8088;
+}
+
+.customer-dashboard .msg-popup .msg-new:hover,
+.customer-dashboard .msg-popup .msg-send:hover {
+  background-color: #7A7077;
+}
+
+.customer-dashboard .msg-popup .msg-header {
+  background: #8c8088;
+}

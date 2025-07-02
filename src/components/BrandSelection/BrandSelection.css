@@ -1,0 +1,331 @@
+/* src/components/BrandSelection/BrandSelection.css */
+
+.brand-selection-page {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #ffffff;
+  min-height: calc(100vh - 80px);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header h1 {
+  color: #1f2937;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.brand-card {
+  position: relative;
+  height: 280px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.brand-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.brand-card:hover::before {
+  opacity: 0.9;
+}
+
+.brand-card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.brand-card:hover .brand-card-background {
+  transform: scale(1.1);
+}
+
+.brand-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  z-index: 2;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover .brand-card-content {
+  transform: translateY(-10px);
+}
+
+.brand-card-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.brand-card-buttons {
+  display: flex;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease 0.1s;
+}
+
+.brand-card:hover .brand-card-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brand-card-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-card-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.brand-card-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.brand-card-btn-primary {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.brand-card-btn-primary::before {
+  background: rgba(97, 188, 142, 0.1);
+}
+
+.brand-card-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.brand-card-btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.brand-card-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Catalogue Dropdown */
+.catalogue-dropdown {
+  position: relative;
+}
+
+.catalogue-dropdown-content {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 8px;
+  margin-bottom: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.catalogue-dropdown:hover .catalogue-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.catalogue-item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #1f2937;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.catalogue-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  background: #ffffff;
+}
+
+/* Add staggered animation for grid items */
+.brand-card {
+  animation: fadeInScale 0.6s ease forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+  opacity: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .brands-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .brand-card {
+    height: 240px;
+  }
+
+  .brand-card-title {
+    font-size: 1.75rem;
+  }
+
+  .brand-card-buttons {
+    opacity: 1;
+    transform: translateY(0);
+    flex-direction: column;
+  }
+
+  .brand-card-btn {
+    width: 100%;
+  }
+
+  .catalogue-dropdown-content {
+    position: relative;
+    bottom: auto;
+    margin-bottom: 0;
+    margin-top: 8px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .brand-card {
+    height: 200px;
+  }
+
+  .brand-card-content {
+    padding: 20px;
+  }
+
+  .brand-card-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,140 @@
+/* src/components/CustomerAmendOrder/CustomerAmendOrder.css */
+.customer-amend-order {
+  animation: fadeIn 0.5s ease;
+}
+
+.customer-amend-order h1 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin: 0 0 0.5rem;
+}
+
+.customer-amend-order > p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.no-amendable-orders {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.no-amendable-orders p {
+  color: #666;
+  font-size: 1.125rem;
+}
+
+.amendable-orders-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.amendable-order-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.amendable-order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #8c848b;
+}
+
+.amendable-order-card h3 {
+  margin: 0 0 1rem;
+  color: #2c2c2c;
+  font-size: 1.25rem;
+}
+
+.amendable-order-card p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.amend-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #8c848b 0%, #a39b9f 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(140, 132, 139, 0.25);
+}
+
+.amend-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 132, 139, 0.35);
+  background: linear-gradient(135deg, #a39b9f 0%, #b4acb0 100%);
+}
+
+@media (max-width: 768px) {
+  .amendable-order-card {
+    padding: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.customer-amend-order h1 {
+  font-size: 2rem;
+  color: var(--text-primary); /* Changed from #2c2c2c */
+  margin: 0 0 0.5rem;
+}
+
+.customer-amend-order > p {
+  color: var(--text-secondary); /* Changed from #666 */
+  margin-bottom: 2rem;
+}
+
+.loading {
+  color: var(--text-secondary); /* Changed from #666 */
+}
+
+.no-amendable-orders {
+  background: var(--bg-primary); /* Changed from white */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.no-amendable-orders p {
+  color: var(--text-secondary); /* Changed from #666 */
+}
+
+.amendable-order-card {
+  background: var(--bg-primary); /* Changed from white */
+  border: 1px solid var(--border-primary); /* Changed from #e0e0e0 */
+}
+
+.amendable-order-card h3 {
+  color: var(--text-primary); /* Changed from #2c2c2c */
+}
+
+.amendable-order-card p {
+  color: var(--text-secondary); /* Changed from #666 */
+}

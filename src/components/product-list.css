@@ -1,0 +1,414 @@
+/* ==========================================================================
+   Global Styles & Layout
+   ========================================================================== */
+body {
+  background-color: #f5f6fa;
+  color: #2c3e50;
+  font-family: 'Inter', sans-serif;
+}
+
+.product-table-container {
+  margin: 2rem auto 0;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+/* ==========================================================================
+   Product Controls & Search
+   ========================================================================== */
+.product-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  min-width: 250px;
+  background: #fff;
+  color: #000;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+
+.export-button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.export-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.export-button:not(:disabled):hover {
+  background-color: #1e40af;
+}
+
+/* ==========================================================================
+   Stock Badges
+   ========================================================================== */
+.stock-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.stock-in {
+  background-color: #dcfce7;
+  color: #065f46;
+}
+
+.stock-out {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* ==========================================================================
+   Brand Logo Banner
+   ========================================================================== */
+.brand-logo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.brand-logo-box {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.brand-page-logo {
+  height: 48px;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   Modal Styles
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 1rem;
+  overflow: auto;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   PDF Template Styles
+   ========================================================================== */
+.pdf-template {
+  width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: #2c3e50;
+  position: relative;
+  display: none;
+}
+
+.pdf-template--visible {
+  display: block;
+}
+
+.pdf-header-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #8e8191;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.pdf-title {
+  font-size: 32px;
+  color: #fff;
+  margin: 0;
+}
+
+.pdf-brand-logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.pdf-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pdf-info-left .pdf-company,
+.pdf-info-left .pdf-agent {
+  font-size: 16px;
+  margin: 2px 0;
+  font-weight: 500;
+}
+
+.pdf-info-right {
+  font-size: 14px;
+  align-self: center;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.pdf-table th,
+.pdf-table td {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.pdf-table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+.pdf-td-image {
+  width: 100px;
+  text-align: center;
+}
+
+.pdf-td-image img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
+  padding: 4px;
+  background: #fafafa;
+}
+
+.pdf-footer-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #8e8191;
+  border-radius: 0 0 8px 8px;
+}
+
+.pdf-loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-loading-overlay .loader {
+  width: 120px;
+  height: 120px;
+}
+
+/* ==========================================================================
+   AG Grid Customizations
+   ========================================================================== */
+.ag-cell-image {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.ag-theme-custom {
+  --ag-background-color: #1A1F2A;
+  --ag-foreground-color: #FFF;
+  --ag-header-background-color: #232937;
+  --ag-header-foreground-color: #FFF;
+  --ag-odd-row-background-color: #1A1F2A;
+  --ag-modal-overlay-background-color: rgba(26, 31, 42, 0.66);
+
+  --ag-border-color: #374151;
+  --ag-secondary-border-color: #374151;
+  --ag-header-column-separator-color: #374151;
+  --ag-row-border-color: #374151;
+
+  --ag-row-hover-color: rgba(137, 199, 181, 0.1);
+  --ag-selected-row-background-color: rgba(137, 199, 181, 0.2);
+  --ag-range-selection-background-color: rgba(137, 199, 181, 0.2);
+  --ag-range-selection-border-color: #89C7B5;
+
+  --ag-grid-size: 8px;
+  --ag-cell-horizontal-padding: 12px;
+  --ag-header-height: 48px;
+  --ag-row-height: 52px;
+  --ag-list-item-height: 32px;
+
+  --ag-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ag-font-size: 14px;
+  --ag-header-font-weight: 500;
+
+  --ag-input-background-color: #232937;
+  --ag-input-border-color: #374151;
+  --ag-input-focus-border-color: #89C7B5;
+  --ag-input-focus-shadow: 0 0 0 3px rgba(137, 199, 181, 0.2);
+  --ag-invalid-color: #ef4444;
+
+  --ag-checkbox-background-color: #232937;
+  --ag-checkbox-checked-color: #89C7B5;
+  --ag-checkbox-unchecked-color: #374151;
+  --ag-checkbox-indeterminate-color: #89C7B5;
+
+  --ag-menu-background-color: #232937;
+  --ag-menu-text-color: #FFF;
+  --ag-menu-border-color: #374151;
+  --ag-dropdown-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  --ag-tool-panel-background-color: #232937;
+  --ag-tool-panel-separator-color: #374151;
+
+  --ag-chip-background-color: rgba(137, 199, 181, 0.2);
+  --ag-disabled-foreground-color: #6b7280;
+}
+
+.ag-theme-custom .ag-root-wrapper {
+  background-color: var(--ag-background-color);
+  border: none;
+}
+
+.ag-theme-custom .ag-cell {
+  line-height: var(--ag-row-height);
+}
+
+.ag-theme-custom .ag-header-cell-label {
+  font-weight: var(--ag-header-font-weight);
+}
+
+.ag-theme-custom .stock-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ag-theme-custom input[type="number"],
+.ag-theme-custom input[type="checkbox"] {
+  background: var(--ag-input-background-color);
+  border: 1px solid var(--ag-input-border-color);
+  color: var(--ag-foreground-color);
+}
+
+.ag-theme-custom input[type="number"]:focus {
+  outline: none;
+  border-color: var(--ag-input-focus-border-color);
+  box-shadow: var(--ag-input-focus-shadow);
+}
+
+.ag-theme-custom .ag-cell-value,
+.ag-theme-custom .ag-group-value {
+  color: var(--ag-foreground-color);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+  .product-table-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .search-input {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .product-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .export-button {
+    width: 100%;
+  }
+
+  .brand-logo-box {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .brand-page-logo {
+    height: 36px;
+  }
+
+  .ag-theme-custom {
+    font-size: 12px;
+  }
+
+  .ag-cell-image {
+    width: 40px;
+    height: 40px;
+  }
+}

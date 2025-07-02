@@ -1,0 +1,181 @@
+/* src/components/CustomerBrands/CustomerBrands.css */
+.customer-brands {
+  animation: fadeIn 0.5s ease;
+}
+
+.customer-brands h1 {
+  font-size: 2.5rem;
+  color: #2C2C2C;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.brands-intro {
+  text-align: center;
+  color: #9C9098;
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brands-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.brand-showcase-card {
+  text-decoration: none;
+  color: inherit;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #EDEDED;
+}
+
+.brand-showcase-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: #8c8088;
+}
+
+.brand-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #faf4e8 0%, #f5efe3 100%);
+}
+
+.brand-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.brand-showcase-card:hover .brand-image img {
+  transform: scale(1.05);
+}
+
+.brand-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 44, 44, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.brand-showcase-card:hover .brand-overlay {
+  opacity: 1;
+}
+
+.shop-now {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.75rem 2rem;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.brand-showcase-card:hover .shop-now {
+  background: #FFFFFF;
+  color: #2C2C2C;
+}
+
+.brand-details {
+  padding: 2rem;
+}
+
+.brand-details h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: #2C2C2C;
+}
+
+.brand-details p {
+  margin: 0;
+  color: #9C9098;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .brands-showcase {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-brands h1 {
+    font-size: 2rem;
+  }
+  
+  .brands-intro {
+    font-size: 1.125rem;
+    padding: 0 1rem;
+  }
+  
+  .brands-showcase {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .brand-image {
+    height: 200px;
+  }
+  
+  .brand-details {
+    padding: 1.5rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for cards */
+.brand-showcase-card:nth-child(1) {
+  animation: fadeIn 0.5s ease 0.1s both;
+}
+
+.brand-showcase-card:nth-child(2) {
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.brand-showcase-card:nth-child(3) {
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.brand-showcase-card:nth-child(4) {
+  animation: fadeIn 0.5s ease 0.4s both;
+}
+
+.brand-showcase-card:nth-child(5) {
+  animation: fadeIn 0.5s ease 0.5s both;
+}
+
+.brand-showcase-card:nth-child(6) {
+  animation: fadeIn 0.5s ease 0.6s both;
+}

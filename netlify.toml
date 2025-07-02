@@ -1,0 +1,17 @@
+# netlify.toml
+[build]
+  publish   = "dist"
+  functions = "netlify/functions"
+
+# proxy all /api/* calls to your serverless functions
+[[redirects]]
+  from    = "/api/*"
+  to      = "/.netlify/functions/api/:splat"
+  status  = 200
+
+# serve index.html for every other path (so React Router can take over)
+[[redirects]]
+  from    = "/*"
+  to      = "/index.html"
+  status  = 200
+  force   = true

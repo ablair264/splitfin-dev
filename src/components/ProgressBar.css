@@ -1,0 +1,224 @@
+/* src/components/ProgressBar.css */
+
+/* Base styles - Dark Theme */
+.progress-bar-wrapper {
+  width: 100%;
+  padding: 2rem 1rem;
+  background: transparent;
+  position: relative;
+  z-index: 50;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Progress Step */
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Step Indicator Circle */
+.step-indicator {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Step Content */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.step-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.step-sublabel {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Progress Connector Line */
+.progress-connector {
+  flex: 1;
+  height: 2px;
+  min-width: 80px;
+  max-width: 140px;
+  margin: 22px 15px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* State Styles */
+/* Pending State */
+.progress-step.pending .step-indicator {
+  background: rgba(121, 213, 233, 0.1);
+  border: 2px solid rgba(121, 213, 233, 0.3);
+}
+
+.progress-step.pending .step-number {
+  color: rgba(121, 213, 233, 0.7);
+}
+
+/* Active State */
+.progress-step.active .step-indicator {
+  background: #79d5e9;
+  border: 2px solid #79d5e9;
+  box-shadow: 0 0 0 4px rgba(121, 213, 233, 0.15);
+  animation: pulse 2s infinite;
+}
+
+.progress-step.active .step-number {
+  color: #0f1419;
+}
+
+.progress-step.active .step-sublabel {
+  opacity: 1;
+  color: #79d5e9;
+}
+
+/* Completed State */
+.progress-step.completed .step-indicator {
+  background: #10b981;
+  border: 2px solid #10b981;
+  color: white;
+}
+
+.progress-step.completed .step-sublabel {
+  opacity: 1;
+  color: #10b981;
+}
+
+/* Connector States */
+.progress-connector {
+  background: rgba(121, 213, 233, 0.2);
+}
+
+.progress-connector.completed {
+  background: #10b981;
+}
+
+/* Dark Mode (always active) */
+.progress-bar-wrapper.dark .step-label {
+  color: #ffffff;
+}
+
+.progress-bar-wrapper.dark .step-sublabel {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-bar-wrapper.dark .progress-step.pending .step-indicator {
+  background: rgba(121, 213, 233, 0.1);
+  border-color: rgba(121, 213, 233, 0.3);
+}
+
+.progress-bar-wrapper.dark .progress-step.pending .step-number {
+  color: rgba(121, 213, 233, 0.7);
+}
+
+.progress-bar-wrapper.dark .progress-step.active .step-indicator {
+  background: #79d5e9;
+  border-color: #79d5e9;
+  box-shadow: 0 0 0 4px rgba(121, 213, 233, 0.15);
+}
+
+.progress-bar-wrapper.dark .progress-step.active .step-sublabel {
+  color: #79d5e9;
+}
+
+.progress-bar-wrapper.dark .progress-connector {
+  background: rgba(121, 213, 233, 0.2);
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(121, 213, 233, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(121, 213, 233, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(121, 213, 233, 0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progress-bar-wrapper {
+    padding: 1.5rem 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .progress-bar {
+    min-width: 600px;
+    padding: 0 1rem;
+  }
+  
+  .step-indicator {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .step-content {
+    min-width: 100px;
+  }
+  
+  .step-label {
+    font-size: 12px;
+  }
+  
+  .step-sublabel {
+    font-size: 11px;
+  }
+  
+  .progress-connector {
+    min-width: 60px;
+    margin: 18px 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-indicator {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .progress-connector {
+    min-width: 40px;
+    margin: 16px 8px 0;
+  }
+}

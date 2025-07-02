@@ -1,0 +1,135 @@
+/* src/styles/responsive-utilities.css */
+/* Import global variables */
+@import './global-variables.css';
+
+/* Responsive Grid Utilities */
+.responsive-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Responsive Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(121, 213, 233, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Responsive Search Input */
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--border-primary);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(121, 213, 233, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    padding: 0.625rem 0.875rem 0.625rem 2.25rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Responsive Card */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--spacing-md);
+    border-radius: 12px;
+  }
+}
+
+/* AG-Grid Mobile Overrides */
+@media (max-width: 768px) {
+  .ag-theme-custom {
+    font-size: 12px !important;
+  }
+  
+  .ag-theme-custom .ag-header-cell {
+    padding: 8px 4px !important;
+  }
+  
+  .ag-theme-custom .ag-cell {
+    padding: 8px 4px !important;
+  }
+  
+  /* Make AG-Grid horizontally scrollable on mobile */
+  .ag-root-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Reduce column widths on mobile */
+  .ag-theme-custom .ag-header-cell,
+  .ag-theme-custom .ag-cell {
+    min-width: 80px;
+  }
+}

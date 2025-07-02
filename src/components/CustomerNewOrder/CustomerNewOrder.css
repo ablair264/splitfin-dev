@@ -1,0 +1,269 @@
+/* CustomerNewOrder.css */
+.cst-customer-new-order-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0; /* Remove top padding since ProgressBar has its own */
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+
+.cst-order-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem; /* Add horizontal padding */
+}
+
+.cst-order-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.cst-order-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+/* Brands List */
+.cst-brands-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 2rem 2rem; /* Add padding to sides and bottom */
+}
+
+.cst-brand-row {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cst-brand-row:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cst-brand-row-main {
+  display: flex;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.cst-brand-row-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cst-brand-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f9fafb;
+  padding: 0.5rem;
+}
+
+.cst-brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cst-brand-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.cst-brand-meta {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.cst-brand-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cst-quick-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cst-quick-action-btn.primary {
+  background-color: #8d8089;
+  color: white;
+}
+
+.cst-quick-action-btn.primary:hover {
+  background-color: #7a6f79;
+  transform: translateX(2px);
+}
+
+.cst-btn-icon {
+  font-size: 1.125rem;
+}
+
+.cst-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  background: white;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cst-expand-btn:hover {
+  border-color: #c99359;
+  color: #c99359;
+}
+
+.cst-chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.cst-brand-row-expanded {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.cst-brand-row.expanded .brand-row-expanded {
+  max-height: 400px;
+}
+
+.cst-expanded-content {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1rem;
+}
+
+.cst-expanded-image {
+  flex: 0 0 300px;
+}
+
+.cst-brand-preview {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cst-expanded-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.cst-brand-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+.cst-expanded-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.cst-expanded-btn {
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cst-expanded-btn.primary {
+  background-color: #c99359;
+  color: white;
+}
+
+.cst-expanded-btn.primary:hover {
+  background-color: #b88348;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .customer-new-order-page {
+    padding: 1rem;
+  }
+
+  .order-header h1 {
+    font-size: 2rem;
+  }
+
+  .brand-row-main {
+    padding: 1rem;
+  }
+
+  .brand-thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .quick-action-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .expanded-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .expanded-image {
+    flex: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-row-left {
+    gap: 1rem;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .quick-action-btn {
+    padding: 0.5rem;
+  }
+}

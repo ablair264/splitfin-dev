@@ -1,0 +1,266 @@
+/* ============================================================
+   NEW CUSTOMER MODULE - Refactored with CSS Variables
+   ============================================================ */
+
+/* Import theme variables at the top */
+@import '../styles/theme-variables.css';
+
+/* Module-specific variables - ALWAYS DARK MODE */
+.new-customer-module {
+  /* Force dark mode colors regardless of system preference */
+  --nc-bg-primary: #1a1f2a;
+  --nc-bg-secondary: #0f1419;
+  --nc-bg-tertiary: #252b35;
+  --nc-bg-hover: rgba(255, 255, 255, 0.05);
+  
+  --nc-text-primary: #ffffff;
+  --nc-text-secondary: rgba(255, 255, 255, 0.7);
+  --nc-text-tertiary: rgba(255, 255, 255, 0.5);
+  
+  --nc-border-primary: rgba(255, 255, 255, 0.1);
+  --nc-border-secondary: rgba(255, 255, 255, 0.05);
+  
+  --nc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --nc-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  
+  /* Accent colors */
+  --nc-accent: #57adac;
+  --nc-accent-hover: #4a9493;
+  --nc-accent-light: rgba(87, 173, 172, 0.05);
+  --nc-error: #ef4444;
+  
+  /* Layout */
+  --nc-max-width: 900px;
+}
+
+/* ============================================================
+   BASE CONTAINER
+   ============================================================ */
+.new-customer-module {
+  padding: 2rem;
+  max-width: var(--nc-max-width);
+  margin: 0 auto;
+  min-height: calc(100vh - 120px);
+  color: var(--nc-text-primary); /* Set base text color */
+}
+
+.new-customer-module .page-header {
+  margin-bottom: 2rem;
+}
+
+.new-customer-module .page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--nc-text-primary); /* Changed from var(--text-primary) */
+  margin: 0 0 0.5rem 0;
+}
+
+.new-customer-module .page-subtitle {
+  font-size: 1rem;
+  color: var(--nc-text-secondary); /* Changed */
+  margin: 0;
+}
+
+/* ============================================================
+   FORM CARD
+   ============================================================ */
+.new-customer-module .customer-form-card {
+  background: var(--nc-bg-primary); /* Changed */
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--nc-border-primary); /* Changed */
+  box-shadow: var(--nc-shadow-md); /* Changed */
+}
+
+/* ============================================================
+   FORM SECTIONS
+   ============================================================ */
+.new-customer-module .form-section {
+  margin-bottom: 2rem;
+}
+
+.new-customer-module .form-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.new-customer-module .section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--nc-text-primary); /* Changed */
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--nc-border-primary); /* Changed */
+}
+
+/* ============================================================
+   FORM GROUPS
+   ============================================================ */
+.new-customer-module .form-group label {
+  color: var(--nc-text-primary); /* Changed */
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.new-customer-module .required-mark {
+  color: var(--nc-error); /* Changed */
+  font-weight: 600;
+}
+
+/* ============================================================
+   FORM INPUTS
+   ============================================================ */
+.new-customer-module .form-input,
+.new-customer-module .form-select,
+.new-customer-module .form-textarea {
+  background: var(--nc-bg-secondary); /* Changed */
+  border: 1px solid var(--nc-border-primary); /* Changed */
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--nc-text-primary); /* Changed */
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.new-customer-module .form-input:focus,
+.new-customer-module .form-select:focus,
+.new-customer-module .form-textarea:focus {
+  outline: none;
+  border-color: var(--nc-accent);
+  background: rgba(87, 173, 172, 0.05); /* Slight tint when focused */
+  box-shadow: 0 0 0 3px var(--nc-accent-light);
+}
+
+.new-customer-module .form-input::placeholder,
+.new-customer-module .form-textarea::placeholder {
+  color: var(--nc-text-tertiary); /* Changed */
+}
+
+/* ============================================================
+   FORM ACTIONS
+   ============================================================ */
+.new-customer-module .form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--nc-border-primary); /* Changed */
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.new-customer-module .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--nc-text-primary); /* Changed */
+  border: 1px solid var(--nc-border-primary); /* Changed */
+}
+
+.new-customer-module .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   HELPER TEXT
+   ============================================================ */
+.new-customer-module .form-helper {
+  font-size: 0.813rem;
+  color: var(--nc-text-secondary); /* Changed */
+  margin-top: 0.25rem;
+}
+
+.new-customer-module .form-error {
+  font-size: 0.813rem;
+  color: var(--nc-error); /* Changed */
+  margin-top: 0.25rem;
+}
+
+/* ============================================================
+   ERROR BANNER (add this new section)
+   ============================================================ */
+.new-customer-module .form-error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--nc-error);
+  font-size: 0.875rem;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 768px) {
+  .new-customer-module {
+    padding: 1rem;
+  }
+  
+  .new-customer-module .customer-form-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .new-customer-module .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .new-customer-module .form-actions {
+    flex-direction: column-reverse;
+    padding-top: 1.5rem;
+  }
+  
+  .new-customer-module .btn {
+    width: 100%;
+  }
+  
+  .new-customer-module .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-customer-module .customer-form-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .new-customer-module .section-title {
+    font-size: 1rem;
+  }
+  
+  .new-customer-module .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+.new-customer-module .form-input:focus-visible,
+.new-customer-module .form-select:focus-visible,
+.new-customer-module .form-textarea:focus-visible,
+.new-customer-module .btn:focus-visible {
+  outline: 2px solid var(--nc-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .new-customer-module .btn,
+  .new-customer-module .form-input,
+  .new-customer-module .form-select,
+  .new-customer-module .form-textarea {
+    transition: none;
+  }
+  
+  .new-customer-module .btn-spinner {
+    animation: none;
+  }
+}

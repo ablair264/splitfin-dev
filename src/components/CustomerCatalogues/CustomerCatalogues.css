@@ -1,0 +1,163 @@
+/* src/components/CustomerCatalogues/CustomerCatalogues.css */
+.customer-catalogues {
+  animation: fadeIn 0.5s ease;
+}
+
+.catalogues-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.catalogues-header h1 {
+  font-size: 2rem;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.request-physical-btn {
+  padding: 0.875rem 2rem;
+  background: #8c8088;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(140, 128, 136, 0.25);
+}
+
+.request-physical-btn:hover {
+  background: #9C9098;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 128, 136, 0.35);
+}
+
+.catalogues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.catalogue-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #EDEDED;
+}
+
+.catalogue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #8c8088;
+}
+
+.catalogue-cover {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(135deg, #faf4e8 0%, #f5efe3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book-icon {
+  position: absolute;
+  font-size: 8rem;
+  color: rgba(140, 128, 136, 0.1);
+  z-index: 1;
+}
+
+.catalogue-cover img {
+  position: relative;
+  z-index: 2;
+  max-height: 100px;
+  max-width: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.catalogue-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.catalogue-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #2C2C2C;
+}
+
+.catalogue-info p {
+  margin: 0;
+  color: #9C9098;
+}
+
+.catalogue-actions {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.view-btn,
+.download-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #EDEDED;
+  background: #FFFFFF;
+  color: #9C9098;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.view-btn:hover {
+  background: #8c8088;
+  color: #FFFFFF;
+  border-color: #8c8088;
+}
+
+.download-btn:hover {
+  background: #2C2C2C;
+  color: #FFFFFF;
+  border-color: #2C2C2C;
+}
+
+@media (max-width: 768px) {
+  .catalogues-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .catalogues-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .request-physical-btn {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

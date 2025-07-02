@@ -1,0 +1,224 @@
+/* src/components/CustomerLayout/CustomerSidebar.css */
+
+/* Sidebar Container */
+.customer-layout .customer-sidebar {
+  width: 260px !important;
+  background: #8c8088 !important;
+  background-image: none !important;
+  background-color: #8c8088 !important;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  position: fixed !important;
+  left: 0 !important;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+  filter: none !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+/* Specifically target sidebar-nav if it exists */
+.customer-layout .sidebar-nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Mobile sidebar override */
+.customer-layout .mobile-sidebar {
+  background: #8c8088 !important;
+  background-image: none !important;
+  background-color: #8c8088 !important;
+}
+
+/* If there's a specific element with class "sidebar-nav" getting the gradient */
+.customer-sidebar .sidebar-nav,
+.mobile-sidebar .sidebar-nav,
+[class*="sidebar"] .sidebar-nav {
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Nuclear option - target any element with sidebar-nav class anywhere in customer layout */
+.customer-layout [class*="sidebar-nav"] {
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  margin-bottom: 0.25rem;
+}
+
+.customer-layout .nav-item,
+.customer-layout .accordion-toggle {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.5rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.customer-layout .nav-item:hover,
+.customer-layout .accordion-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+}
+
+.customer-layout .nav-item.active,
+.customer-layout .accordion-toggle.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.customer-layout .nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #FFFFFF;
+}
+
+.customer-layout .nav-icon,
+.customer-layout .submenu-icon {
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  min-width: 20px;
+  color: #FFFFFF;
+}
+
+.customer-layout .nav-label,
+.customer-layout .submenu-label {
+  flex: 1;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.customer-layout .nav-chevron {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  color: #FFFFFF;
+}
+
+/* Submenu */
+.customer-layout .submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.customer-layout .submenu.expanded {
+  max-height: 300px;
+}
+
+.customer-layout .submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem 0.75rem 3.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.customer-layout .submenu-item:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.customer-layout .submenu-item.active {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Footer */
+.customer-layout .sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent !important;
+}
+
+.customer-layout .user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.customer-layout .user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #FFFFFF;
+}
+
+.customer-layout .user-details {
+  flex: 1;
+}
+
+.customer-layout .user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.customer-layout .user-role {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile Specific */
+.mobile-sidebar .customer-sidebar {
+  position: static !important;
+  width: 100% !important;
+}
+
+.mobile-sidebar .sidebar-header {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .customer-layout .customer-sidebar {
+    display: none;
+  }
+}
+
+/* Scrollbar Styling */
+.customer-layout .customer-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.customer-layout .customer-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.customer-layout .customer-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.customer-layout .customer-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

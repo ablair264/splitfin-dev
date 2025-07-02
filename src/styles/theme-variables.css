@@ -1,0 +1,39 @@
+/* theme-variables.css - Import this at the top of every CSS file */
+:root {
+  /* Dark Mode Colors - Always Active */
+  --primary-color: #5d7784;
+  --primary-dark: #191e29;
+  --secondary-color: #8b5cf6;
+  --accent-color: #79d5e9;
+  --accent-teal: #4daeac;
+  --success-color: #059669;
+  --warning-color: #fbbf24;
+  --error-color: #dc2626;
+  
+  /* Dark Mode Backgrounds */
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f2a;
+  --bg-tertiary: #252b35;
+  --bg-hover: rgba(255, 255, 255, 0.05);
+  
+  /* Dark Mode Text */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --text-light: #e5e7eb;
+  --text-on-dark: #ffffff;
+  
+  /* Dark Mode Borders */
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  
+  /* Dark Mode Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #191e29 0%, #5d7784 100%);
+  --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #79d5e9 0%, #4daeac 100%);
+}

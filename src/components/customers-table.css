@@ -1,0 +1,112 @@
+.customers-container {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.customers-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.customers-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+}
+
+.column-toggle label {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.customers-table th,
+.customers-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.customers-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  margin: 0 0.2rem;
+  padding: 0.4rem 0.8rem;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.page-size-controls {
+  margin-left: 1rem;
+}
+
+.page-size-controls select {
+  margin-left: 0.3rem;
+  padding: 0.3rem;
+}
+
+/* Universal search input fix */
+input[type="search"],
+input[type="text"].search-input,
+.search-input,
+.search-wrapper input {
+  background: #ffffff !important; /* Force white background */
+  padding-left: 3rem !important; /* Space for icon */
+  color: #111827 !important; /* Dark text */
+}
+
+/* Ensure placeholder text is visible */
+input[type="search"]::placeholder,
+input[type="text"].search-input::placeholder,
+.search-input::placeholder,
+.search-wrapper input::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Search icon positioning */
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper .search-icon,
+.search-wrapper svg,
+.search-wrapper .icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none; /* Prevent icon from blocking input clicks */
+}

@@ -1,0 +1,22 @@
+/* theme-variables.css - Import this at the top of every CSS file */
+:root {
+    --bg-primary: #0f1419;
+    --bg-secondary: #1a1f2a;
+    --bg-tertiary: #252b35;
+    --bg-hover: rgba(255, 255, 255, 0.05);
+    
+    /* Dark Mode Text */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-tertiary: rgba(255, 255, 255, 0.5);
+    --text-light: #e5e7eb;
+    
+    /* Dark Mode Borders */
+    --border-primary: rgba(255, 255, 255, 0.1);
+    --border-secondary: rgba(255, 255, 255, 0.05);
+    
+    /* Dark Mode Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
