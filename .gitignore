@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.pdf
+*.dylib
+deps/
+.env
+*.log
+.DS_Store
