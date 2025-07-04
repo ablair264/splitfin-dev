@@ -15,6 +15,7 @@ import { doc, getDoc } from 'firebase/firestore'
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
 import { PurchaseOrderSuggestions } from './components/PurchaseOrderSuggestions';
 import { MessagingProvider } from './contexts/MessagingContext';
+import './styles/tailwind.css';
 
 ModuleRegistry.registerModules([AllCommunityModule])
 
